@@ -1,0 +1,124 @@
+doctype html
+html lang="de"
+  head
+    title
+      | {{ page.title }}
+    meta name="keywords" content=""
+    meta name="description" content=""
+    meta name="HandheldFriendly" content="True"
+    meta name="MobileOptimized" content="320"
+    meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+
+    link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet" type="text/css"
+
+    meta name="og:title" content="{{ page.title }}"
+    meta name="og:type" content="website"
+    meta name="og:url" content="url"
+    meta name="og:description" content="desc"
+    meta name="og:image" content="/assets/img/large.png"
+
+    meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+
+    link rel="apple-touch-icon" href="touch-icon-iphone.png"
+    link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png"
+    link rel="apple-touch-icon" sizes="120x120" href="touch-icon-iphone-retina.png"
+    link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png"
+
+    link rel="image_src" href="/assets/img/large.png"
+
+    link rel="shortcut icon" href="/assets/img/favicon.png"
+    | {% stylesheet style %}
+
+    / HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    /[if lt IE 9]
+      | {% javascript ie_lte9 %}
+    /[if IE 7]
+      | {% stylesheet font-awesome-ie7 %}
+    /[if IE]
+      css:
+        body {
+          font-size:16px;
+        }
+    | {% javascript application %}
+
+    / Leaflet stuff
+    | {% stylesheet leaflet %}
+    /[if lt IE 8]
+      | {% stylesheet leaflet_ie_lt8 %}
+    | {% javascript map %}
+
+  body id="{{ page.id }}" data-current-page="{{ page.id }}"
+    / Wrap all page content here
+    #wrap
+      / Fixed navbar
+      nav.navbar.navbar-fixed-top role="navigation"
+        .container
+          .navbar-header
+            button.navbar-toggle.pull-right type="button" data-toggle="collapse" data-target="#main-nav"
+              span.sr-only Toggle navigation
+              i.fa.fa-reorder
+            a.navbar-brand href="/"
+              img src="/assets/img/brand.png" width="100%" height="30"
+              | brand
+
+          #main-nav.collapse.navbar-collapse.pull-right
+            ul.nav.navbar-nav
+              li
+                a href='#' data-page-id="" Link #1
+              li
+                a href='#' data-page-id="" Link #2
+              li
+                a href="#" Link #3
+
+
+      / Begin page content
+      | {{ content }}
+
+    #footer
+      .container
+        .row
+          .col-xs-12.col-md-7.col-md-push-5
+            .row
+              .col-xs-4.col-md-4
+                h5.text-muted HEADLINE 1
+                ul.footer-links
+                  li
+                    a href= "/" data-page-id="welcome" Startseite
+                  li
+                    a href= "#" data-page-id="product" Seite
+                  li
+                    a href= "#" data-page-id="service" Seite
+              .col-xs-4.col-md-4
+                h5.text-muted HEADLINE 2
+                ul.footer-links
+                  li
+                    a href= "/about/" data-page-id="about" About us
+                  li
+                    a href= "/imprint/" data-page-id="imprint" Imprint
+                  li
+                    a href= "/privacy/" data-page-id="privacy" Privacy Policy
+              .col-xs-4.col-md-4
+                h5.text-muted HEADLINE 3
+                ul.footer-links
+                  li
+                    a href= "#" data-page-id="twitter"
+                      i.fa.fa-twitter
+                      | Twitter
+                  li
+                    a href= "#" data-page-id="github"
+                      i.fa.fa-github-alt
+                      | Github
+                  li
+                    a href= "#" data-page-id="email"
+                      i.fa.fa-envelope
+                      | E-Mail us
+
+
+          .col-xs-12.col-md-5.col-md-pull-7.credit
+            img.footer-brand src= "/assets/img/brand.png" width= "258" height="43"
+            p.text-muted
+              | © 2013 Unternehmen GmbH
+
+    / | {% slim reg_form.slim %}
+
+    / | {% slim piwik.slim %}

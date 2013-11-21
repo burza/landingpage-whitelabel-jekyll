@@ -1,0 +1,124 @@
+$font-size-default: 14px;
+$font-size-big: 16px;
+
+$font-size-mid: 1em;
+
+$line-height: 1.125em;
+
+@mixin one-line-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+body {
+  color: $font-color;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: $font-size-default;
+  line-height: $line-height;
+  -webkit-font-smoothing: subpixel-antialiased !important; 
+  -webkit-backface-visibility: hidden; 
+  -moz-backface-visibility: hidden; 
+  -ms-backface-visibility: hidden;
+}
+
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  &.dotted-list li {
+    list-style: disc;
+    list-style-position: inside;
+    line-height: 1.5em;
+  }
+}
+
+p {
+  font-size: 1em;
+  margin-bottom: 2em;
+  line-height: 1.3em;
+}
+a {
+  font-size: 1em;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+#footer {
+  h5 {
+    @include one-line-text;
+    font-weight: 400;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1em;
+    text-transform: uppercase;
+    margin-top: 0;
+    display: block;
+    width: 100%;
+  }
+  .footer-links {
+    margin-bottom: 4em;
+    > li { line-height: 1.8em; }
+  } 
+  a {
+    @include transition(all .3s ease-in);
+    color: $grey;
+    &:hover {
+      color: $link-color-hover;
+    }
+    &.active, &.active:hover {
+      color: $link-color;
+      cursor: default;
+    }
+    i[class*=fa-] {
+      margin-right: .5em;
+    }
+  }
+  .text-muted {
+    color: $mid-grey;
+  }
+  .credit {
+    text-align: center;
+  }
+}
+
+@mixin h1 {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+@mixin h2 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  font-size: 2em;
+  line-height: 1.3em;
+  margin-bottom: 1em;  
+  text-transform: uppercase;
+}
+
+@mixin h3 {
+  font-size: 1.1em;
+  font-weight: 600;
+  line-height: 1.2em;
+}
+
+@mixin h4 {
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1.5em;
+}
+
+h1 {
+  @include h1;
+}
+
+h2 {
+  @include h2;
+}
+
+h3 {
+  @include h3;
+}
+
+h4 {
+  @include h4;
+}

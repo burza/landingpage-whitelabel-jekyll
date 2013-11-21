@@ -1,0 +1,44 @@
+@import 'bourbon/bourbon';
+
+@import 'variables';
+
+@import 'colors.lib';
+@import 'bootstrap';
+
+@import 'font-awesome';
+@import 'typo.lib';
+@import 'forms.lib';
+
+@import 'layout';
+@import 'forms';
+@import 'components';
+
+
+// BOOTSTRAP OVERRIDES
+body {
+  font-size: $font-size-default;
+}
+body #wrap {
+  background: white;
+}
+
+// Small devices (tablets, 768px and up)
+@media (min-width: $screen-sm) {
+  body {
+    font-size: $font-size-big;
+  }
+  .navbar>.container .navbar-brand {
+    margin-left: 0;
+  }
+  #footer .credit {
+    text-align: left;
+  }
+}
+
+// Medium devices (desktops, 992px and up)
+@media (min-width: $screen-md) {
+}
+
+// Large devices (large desktops, 1200px and up)
+@media (min-width: $screen-lg) {
+}

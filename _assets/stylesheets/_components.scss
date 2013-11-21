@@ -1,0 +1,12 @@
+
+.nowrap {
+  white-space: nowrap;
+}
+
+
+// This is used to hide and obfuscate email adresses on the page
+.contact {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  text-align: left;
+}

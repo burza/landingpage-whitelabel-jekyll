@@ -1,0 +1,25 @@
+$old-grey:      #f2f2f2;
+
+
+$light-grey:    #EBEBEB;
+$grey:          #CCCCCC;
+$mid-grey:      #646464;
+$dark-grey:     #333333;
+
+$green:         #1ABC9C;
+$dark-blue:     #34495E;
+$blue:          #3B536C;
+
+$orange:        #e16222;
+
+$red:           #E74C3C;
+$font-color: $dark-grey;
+
+$primary-color: lighten($orange,5%);
+
+$link-color:     $primary-color;
+$link-color-hover: lighten($primary-color,5%);
+
+$footer-bg: $dark-grey;
+$footer-font-color: $old-grey;
+$footer-link-color: $mid-grey;

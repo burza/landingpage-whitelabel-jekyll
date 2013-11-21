@@ -1,0 +1,14 @@
+.form-group.error .input-group {
+  position: relative;
+  > input[type=text], > input[type=email], textarea {
+    box-shadow: 3px 0 0 $primary-color inset;
+  }
+  span.error-message {
+    position: absolute;
+    left: 0;
+    bottom: -1.5em;
+    line-height: 1em;
+    height: 1em;
+    color: $primary-color;
+  }
+}
